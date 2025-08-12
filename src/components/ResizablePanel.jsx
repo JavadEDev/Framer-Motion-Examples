@@ -1,6 +1,8 @@
 import { useState, useContext, createContext } from "react";
 import { motion, AnimatePresence, MotionConfig } from "motion/react";
 import useMeasure from "react-use-measure";
+import { CheckIcon } from "../icons";
+import Spinner from "./ui/Spinner.jsx";
 
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -163,43 +165,3 @@ Form.Button = function FormButton({ children, className, ...rest }) {
     </MotionConfig>
   );
 };
-
-function CheckIcon(props) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className="size-6"
-    >
-      <motion.path
-        initial={{ pathLength: 0 }}
-        animate={{ pathLength: 1 }}
-        transition={{
-          type: "tween",
-          ease: "easeOut",
-          duration: 0.3,
-        }}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="m4.5 12.75 6 6 9-13.5"
-      />
-    </svg>
-  );
-}
-
-function Spinner({ size = 20, className = "" }) {
-  return (
-    <motion.div
-      role="status"
-      aria-label="Loading"
-      className={`inline-block rounded-full border-2 border-white/30 border-t-white ${className}`}
-      style={{ width: size, height: size }}
-      animate={{ rotate: 360 }}
-      transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
-    />
-  );
-}
