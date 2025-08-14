@@ -6,7 +6,7 @@ const images = [
   "/images/1.jpg",
   "/images/2.jpg",
   "/images/3.jpg",
-  "/images/4.jpg",
+  "/images/1.jpg",
   "/images/5.jpg",
   "/images/6.jpg",
 ];
@@ -19,11 +19,6 @@ const gap = 2;
 export default function CarouselSlider() {
   const [index, setIndex] = useState(0);
 
-  const thumbsContainerRef = useRef(null);
-  const thumbButtonsRef = useRef([]);
-  const [thumbsX, setThumbsX] = useState(0);
-
-  // NEW: Keyboard navigation function
   useEffect(() => {
     const handleKeyPress = (event) => {
       switch (event.key) {
@@ -46,31 +41,6 @@ export default function CarouselSlider() {
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, []);
-
-  useEffect(() => {
-    const centerActiveThumb = () => {
-      const container = thumbsContainerRef.current;
-      const activeEl = thumbButtonsRef.current[index];
-      if (!container || !activeEl) return;
-
-      const c = container.getBoundingClientRect();
-      const a = activeEl.getBoundingClientRect();
-      const delta = a.left + a.width / 2 - (c.left + c.width / 2);
-
-      setThumbsX((prev) => prev - delta);
-    };
-
-    const raf = requestAnimationFrame(centerActiveThumb);
-    const t = setTimeout(centerActiveThumb, 700);
-    const onResize = () => centerActiveThumb();
-    window.addEventListener("resize", onResize);
-
-    return () => {
-      cancelAnimationFrame(raf);
-      clearTimeout(t);
-      window.removeEventListener("resize", onResize);
-    };
-  }, [index]);
 
   return (
     <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
@@ -119,20 +89,22 @@ export default function CarouselSlider() {
             </AnimatePresence>
           </div>
 
-          <div
-            ref={thumbsContainerRef}
-            className="inset-x-0 mt-4 mb-4 flex h-14 justify-center overflow-hidden"
-          >
+          <div className="inset-x-0 mt-4 mb-4 flex h-14 justify-center overflow-hidden">
             <motion.div
               initial={false}
-              animate={{ x: thumbsX }}
+              animate={{
+                x: `-${
+                  index * 100 * (collaspedAspectRatio / fullAspectRatio) +
+                  margin +
+                  index * gap
+                }`,
+              }}
               style={{ aspectRatio: fullAspectRatio, gap: `${gap}%` }}
               className="flex"
             >
               {images.map((image, imageIndex) => (
                 <motion.button
                   key={image}
-                  ref={(el) => (thumbButtonsRef.current[imageIndex] = el)}
                   onClick={() => setIndex(imageIndex)}
                   initial={false}
                   whileHover={{ opacity: 1 }}
