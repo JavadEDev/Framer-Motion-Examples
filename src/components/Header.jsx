@@ -68,12 +68,12 @@ export default function Header() {
                   [1, 1.5],
                 ),
               }}
-              className="flex origin-left items-center text-xl font-semibold uppercase"
+              className="flex origin-left items-center text-base font-semibold uppercase sm:text-xl"
             >
-              <span className="-ml-1.5 inline-block -rotate-90 text-[10px] leading-1">
+              <span className="ml-1.5 -rotate-90 text-[10px] leading-1 sm:inline-block">
                 The
               </span>
-              <span className="-ml-1 text-2xl tracking-[-.075em] text-slate-600">
+              <span className="-ml-1 text-xl tracking-[-.075em] text-slate-600 sm:text-2xl">
                 Daily Bugle
               </span>
             </motion.p>
@@ -86,7 +86,7 @@ export default function Header() {
                   [1, 0],
                 ),
               }}
-              className="flex space-x-4 text-xs font-medium text-slate-400"
+              className="mr-1.5 space-x-4 text-xs font-medium text-slate-400 sm:flex"
             >
               <a href="#">News</a>
               <a href="#">Sports</a>
@@ -95,7 +95,7 @@ export default function Header() {
           </motion.div>
         </motion.header>
 
-        <main className="px-8 pt-28">
+        <main className="px-4 pt-24 sm:px-8 sm:pt-28">
           <h1 className="h-10 w-4/5 rounded bg-slate-200 text-2xl font-bold" />
           <div className="mt-8 space-y-6">
             {[...Array(20).keys()].map((i) => (
