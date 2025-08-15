@@ -6,7 +6,7 @@ import {
   useSpring,
   useTransform,
   useMotionTemplate,
-} from "framer-motion";
+} from "motion/react";
 
 const FeatureCard = ({ to, title, description }) => {
   const ref = useRef(null);
