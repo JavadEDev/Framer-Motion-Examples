@@ -5,7 +5,7 @@ import { CheckIcon } from "../icons";
 export default function Multistepwizard() {
   const [step, setStep] = useState(1);
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-700 to-slate-400 p-10">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-700 to-slate-900 p-10">
       <div className="mx-auto w-full max-w-md rounded-2xl bg-white">
         <div className="flex justify-between rounded p-8">
           <Step step={1} currentStep={step} />

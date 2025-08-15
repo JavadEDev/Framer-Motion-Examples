@@ -48,7 +48,7 @@ export default function Calendar() {
 
   return (
     <MotionConfig transition={transition}>
-      <div className="flex min-h-screen items-start bg-stone-800 pt-16 text-stone-900">
+      <div className="flex min-h-screen items-start bg-gradient-to-br from-slate-700 to-slate-900 pt-16 text-stone-900">
         <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl bg-white">
           <div className="py-8">
             <div className="flex flex-col justify-center rounded text-center">

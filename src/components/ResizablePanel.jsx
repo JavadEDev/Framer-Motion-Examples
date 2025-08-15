@@ -14,7 +14,7 @@ export default function ResizablePanel() {
 
   return (
     <MotionConfig transition={transition}>
-      <div className="flex min-h-screen flex-col items-start bg-zinc-900 p-20 ps-28">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-700 to-slate-900 p-20 ps-28">
         <div className="mx-auto w-full max-w-md">
           <div className="overflow-hidden rounded-2xl border border-zinc-700 bg-zinc-800">
             <div className="px-8 pt-8">

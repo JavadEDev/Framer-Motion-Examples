@@ -1,6 +1,39 @@
-import { NavLink } from "react-router";
+import FeatureCard from "../components/FeatureCard";
 
 const HomePage = () => {
+  const features = [
+    {
+      to: "/header",
+      title: "Header",
+      description: "Navigation header component with modern design",
+    },
+    {
+      to: "/calendar",
+      title: "Calendar",
+      description: "Interactive calendar component with smooth animations",
+    },
+    {
+      to: "/resizable-panel",
+      title: "Resizable Panel",
+      description: "Drag to resize panel with fluid animations",
+    },
+    {
+      to: "/carousel",
+      title: "Carousel",
+      description: "Image carousel with smooth transitions",
+    },
+    {
+      to: "/wizard",
+      title: "Multi-step Wizard",
+      description: "Step-by-step form wizard with progress indicators",
+    },
+    {
+      to: "/email-inbox",
+      title: "Email Inbox",
+      description: "Email interface with interactive elements",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -12,66 +45,14 @@ const HomePage = () => {
             Explore various components built with Framer Motion and React
           </p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg bg-white p-6 shadow-md">
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                <NavLink to="/header" className="hover:text-blue-700">
-                  Header
-                </NavLink>
-              </h3>
-              <p className="text-gray-600">
-                Navigation header component with modern design
-              </p>
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-md">
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                <NavLink to="/calendar" className="hover:text-blue-700">
-                  Calendar
-                </NavLink>
-              </h3>
-              <p className="text-gray-600">
-                Interactive calendar component with smooth animations
-              </p>
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-md">
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                <NavLink to="/resizable-panel" className="hover:text-blue-700">
-                  Resizable Panel
-                </NavLink>
-              </h3>
-              <p className="text-gray-600">
-                Drag to resize panel with fluid animations
-              </p>
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-md">
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                <NavLink to="/carousel" className="hover:text-blue-700">
-                  Carousel
-                </NavLink>
-              </h3>
-              <p className="text-gray-600">
-                Image carousel with smooth transitions
-              </p>
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-md">
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                <NavLink to="/wizard" className="hover:text-blue-700">
-                  Multi-step Wizard
-                </NavLink>
-              </h3>
-              <p className="text-gray-600">
-                Step-by-step form wizard with progress indicators
-              </p>
-            </div>
-            <div className="rounded-lg bg-white p-6 shadow-md">
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">
-                <NavLink to="/email-inbox" className="hover:text-blue-700">
-                  Email Inbox
-                </NavLink>
-              </h3>
-              <p className="text-gray-600">
-                Email interface with interactive elements
-              </p>
-            </div>
+            {features.map((f) => (
+              <FeatureCard
+                key={f.to}
+                to={f.to}
+                title={f.title}
+                description={f.description}
+              />
+            ))}
           </div>
         </div>
       </div>
