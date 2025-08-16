@@ -1,7 +1,9 @@
 import FeatureCard from "../components/ui/FeatureCard";
-import { motion } from "motion/react";
+import { motion, useIsPresent } from "framer-motion";
 
 const HomePage = () => {
+  const isPresent = useIsPresent();
+
   const features = [
     {
       to: "/header",
