@@ -1,9 +1,8 @@
-import { motion, useIsPresent } from "motion/react";
+import { motion } from "motion/react";
 import { useLocation } from "react-router";
 
 const PageTransition = ({ children }) => {
   const location = useLocation();
-  const isPresent = useIsPresent();
 
   return (
     <>
