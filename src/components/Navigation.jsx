@@ -10,9 +10,14 @@ const Navigation = () => {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <div className="text-lg font-semibold text-gray-800">
-              Framer Motion
-            </div>
+            <motion.img
+              src="/fm.svg"
+              alt="Framer Motion Logo"
+              className="mt-1.5 h-14 w-14"
+              initial={{ rotate: -20, scale: 0.8, opacity: 0 }}
+              animate={{ rotate: 0, scale: 1, opacity: 1 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            />
           </div>
 
           <div className="hidden md:flex md:space-x-8">
