@@ -1,4 +1,5 @@
 import FeatureCard from "../components/ui/FeatureCard";
+import { motion } from "motion/react";
 
 const HomePage = () => {
   const features = [
@@ -38,12 +39,27 @@ const HomePage = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="mb-4 text-4xl font-bold text-gray-900">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{
+              scale: 1.2,
+              color: ["#bfdbfe", "#60a5fa", "#2563eb"],
+              textShadow: "0px 2px 8px #60a5fa, 0px 4px 16px #2563eb",
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="mb-4 text-4xl font-bold text-gray-900"
+          >
             Welcome to Framer Motion Examples
-          </h1>
-          <p className="mb-8 text-xl text-gray-600">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="mb-8 text-xl text-gray-600"
+          >
             Explore various components built with Framer Motion and React
-          </p>
+          </motion.p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <FeatureCard
