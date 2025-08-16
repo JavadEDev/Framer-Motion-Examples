@@ -30,7 +30,6 @@ Built with the tools and technologies:
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Testing](#testing)
 - [Features](#features)
 - [Components](#components)
 - [Technologies Used](#technologies-used)
@@ -84,14 +83,6 @@ The application includes several example pages showcasing different animation te
 - **Multi-step Wizard**: Step-by-step form with progress indicators
 - **Email Inbox**: Interactive email interface with animations
 
-### Testing
-
-Run the test suite:
-
-```bash
-npm test
-```
-
 Run linting:
 
 ```bash
@@ -105,7 +96,7 @@ npm run lint
 - 📱 Responsive design with mobile-first approach
 - 🚀 Performance-optimized animations
 - 🎨 Modern UI with Tailwind CSS
-- �� Reusable animation components
+- 🐣 Reusable animation components
 
 ## Components
 
